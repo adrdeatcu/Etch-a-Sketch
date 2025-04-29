@@ -1,15 +1,23 @@
 let container =  document.getElementById("container");
 let popupButton = document.getElementById("popupButton")
+let colorModeButton =document.getElementById("colorModeButton");
+let divContainer = document.getElementById("container");
+let colorMode = document.getElementById("colorMode");
+let blackModeButton = document.getElementById("blackModeButton");
+
+let currentMode = "black";
+colorMode.textContent=`Current color mode: ${currentMode}`;
+
 
 popupButton.addEventListener("click", enterGridSize);
+colorModeButton.addEventListener("click", colorModeOn);
+blackModeButton.addEventListener("click", blackModeOn);
 
 for(let i=1;i<=256;i++)
 {
     let div=document.createElement("div");
     div.classList.add("square");
-    div.addEventListener("mouseenter", function(){
-        div.style.backgroundColor = "black";
-    })
+    color(div);
     container.appendChild(div);
 }
 
@@ -22,9 +30,8 @@ function gridCreation(value)
         let div=document.createElement("div");
         div.classList.add("square");
         div.style.flex=`0 0 ${100/value}%`;
-        div.addEventListener("mouseenter", function(){
-            div.style.backgroundColor = "black";
-        })
+        color(div);
+      
         container.appendChild(div);
     }
     
@@ -34,7 +41,7 @@ function gridCreation(value)
 function enterGridSize()
 {
     let popupMessage= Number(prompt("Enter the grid size(max 64)"));
-    if(popupMessage>=65)
+    while(popupMessage>=65)
     {
         popupMessage=Number(prompt("Enter the grid size(max 64)"));
     }
@@ -43,3 +50,35 @@ function enterGridSize()
     
 }
 
+function colorModeOn()
+{
+    currentMode="color";
+    colorMode.textContent=`Current color mode: ${currentMode}`;
+
+}
+
+function blackModeOn()
+{
+    currentMode="black";
+    colorMode.textContent=`Current color mode: ${currentMode}`;
+}
+
+function color(div)
+{
+    div.addEventListener("mouseenter", function(){
+        if(currentMode=="black")
+        {
+            div.style.backgroundColor= "black";
+        }else if(currentMode=="color"){
+            div.style.backgroundColor= "red";
+        }
+    })
+}
+
+function getRandomColor()
+{
+    
+    let randomValue=Math.floor(Math.random() * 101);
+    let randomColor= 'undefinded';
+    return randomColor;
+}

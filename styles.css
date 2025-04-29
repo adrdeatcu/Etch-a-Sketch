@@ -10,6 +10,20 @@ html,body{
     margin: 0;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+#mainSection{
+    display: flex;
+    flex-direction: row;
+}
+
+#buttonsSection{
+    display: flex;
+    flex-direction: column;
+}
 
 #container{
     width: 700px;
