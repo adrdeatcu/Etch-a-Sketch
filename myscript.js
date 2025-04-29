@@ -1,9 +1,10 @@
 let container =  document.getElementById("container");
 let popupButton = document.getElementById("popupButton")
 let colorModeButton =document.getElementById("colorModeButton");
-let divContainer = document.getElementById("container");
 let colorMode = document.getElementById("colorMode");
 let blackModeButton = document.getElementById("blackModeButton");
+let resetButton = document.getElementById("resetButton");
+
 
 let currentMode = "black";
 colorMode.textContent=`Current color mode: ${currentMode}`;
@@ -12,6 +13,7 @@ colorMode.textContent=`Current color mode: ${currentMode}`;
 popupButton.addEventListener("click", enterGridSize);
 colorModeButton.addEventListener("click", colorModeOn);
 blackModeButton.addEventListener("click", blackModeOn);
+resetButton.addEventListener("click", resetMode);
 
 function getRandomColor()
 {
@@ -88,4 +90,12 @@ function blackModeOn()
 }
 
 
+function resetMode()
+{
+    let squares= document.querySelectorAll(".square");
+    for(let square of squares)
+    {
+        square.style.backgroundColor="white";
+    }
+}
 

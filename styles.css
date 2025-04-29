@@ -11,30 +11,65 @@ html,body{
 }
 
 body{
+    background-color: #ffe0b2;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+#mainTitle{
+    font-style: italic;
+    font-size: 50px;
+    color: #333333;
+    text-decoration: underline;
 }
 
 #mainSection{
     display: flex;
     flex-direction: row;
+    gap: 70px;
 }
 
 #buttonsSection{
     display: flex;
     flex-direction: column;
+    margin-top: 160px;
+}
+
+.buttons{
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    color: #333333;
+    font-weight: 900;
+    background-color: #ffb74d;
+    
+}
+
+.buttons:hover{
+    background-color: #ff9800;
 }
 
 #container{
+    margin-top: 10px;
     width: 700px;
     height: 700px;
-    border: 2px solid #000;
+    border: 3px solid #8d6e63;
     display: flex;
     flex-wrap: wrap;
+}
+
+#colorMode{
+    margin-right: 240px;
+    margin-top: 30px;
+    margin-bottom: -10px;
+    color: #333333;
 }
 
 .square{
     
     flex: 0 0 6.25%;
-    border: 2px solid #000;
+    background-color: white;
+    border: 2px solid #8d6e63;
 }
